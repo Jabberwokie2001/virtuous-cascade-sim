@@ -1,0 +1,53 @@
+{
+  "ce_id": "CE-726",
+  "status": "PASS",
+  "generated_utc": "2026-11-27T14:43:20Z",
+  "external_context_anchor": "WePlanet & ALLFED ? Building the EU Food Firewall (2026-11-26): resilient domestic production + open trade for global catastrophic risks",
+  "grounded_engines": [
+    "six_region_bulkhead_sim.py",
+    "marine_reef_longhouse_sim.py",
+    "boreal_maom_fire_sim.py"
+  ],
+  "empirical_results_20_seeds": {
+    "open_trade_non_saturated_bulkheads": {
+      "CA_OTTAWA_RUSH": {
+        "baseline_p50": 77.59,
+        "bulkhead_p50": 98.5,
+        "lift_pct": 20.91,
+        "cvar20": 98.13
+      },
+      "JP_TOKYO_PLATEAU": {
+        "baseline_p50": 16.3,
+        "bulkhead_p50": 43.42,
+        "lift_pct": 27.12,
+        "cvar20": 34.82
+      },
+      "CN_CIM_SPONGE": {
+        "baseline_p50": 14.62,
+        "bulkhead_p50": 42.45,
+        "lift_pct": 27.83,
+        "cvar20": 33.9
+      }
+    },
+    "resilient_domestic_marine_production": {
+      "fixed_surface_p50_pct": 22.5,
+      "adaptive_10_5m_submergence_p50_pct": 44.76,
+      "iqr_pct": 22.27,
+      "cvar20_pct": 26.34,
+      "fishery_nursery_stock_pct": 80.48,
+      "commons_quorum_pass_pct": 81.67,
+      "sinking_fund_cad_m": [
+        12.0,
+        15.26
+      ]
+    },
+    "terrestrial_boreal_maom_buffer": {
+      "stand_survival_p50_pct": 95.25,
+      "iqr_pct": 2.16,
+      "cvar20_pct": 93.02,
+      "soil_maom_retention_p50_pct": 91.58,
+      "hot_swaps_mean": 32,
+      "catastrophic_rail_failures": 0
+    }
+  }
+}

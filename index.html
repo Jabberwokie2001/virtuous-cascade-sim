@@ -1,0 +1,49 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>The Virtuous Cascade: Hopeful Attractor Simulation</title>
+<style>body{background:#08101c;color:#e2e8f0;font-family:system-ui;max-width:980px;margin:28px auto;padding:0 20px;line-height:1.6}
+.hero{background:linear-gradient(135deg,#0f172a,#112a3a);border:1px solid #1e3a5f;border-radius:14px;padding:24px;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:1.2fr 1fr;gap:16px}.card{background:#111927;border:1px solid #243247;border-radius:10px;padding:16px}
+button{background:#1e293b;color:#38bdf8;border:1px solid #38bdf8;padding:6px 12px;border-radius:6px;cursor:pointer;float:right}
+input{width:100%}h1,h2,h3{color:#38bdf8;margin-top:0}.tag{color:#34d399;font-weight:600;font-size:13px}a{color:#2dd4bf}</style></head>
+<body><div class='hero'><button id='langBtn' onclick='toggleLang()'>Fran&ccedil;ais (FR)</button>
+<span class='tag'>PUBLIC INTERACTIVE EDITION &bull; BIOLOGICAL &amp; DIGITAL &bull; <a href='resume.html'>Founder Profile / Profil &rarr;</a></span>
+<h1 id='ttl'>The Virtuous Cascade: Hopeful Attractor Simulation</h1>
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 20px 0">
+  <a href="simmra_3d.html" style="padding:9px 16px;border-radius:8px;background:#0284c7;color:#fff;font-weight:600;text-decoration:none">Launch 3D SIMMRA Urban Simulation &rarr;</a>
+  <a href="USAG_v2_SIMMRA_Public_Validation_Dossier.html" style="padding:9px 16px;border-radius:8px;background:#1e293b;border:1px solid #38bdf8;color:#7dd3fc;font-weight:600;text-decoration:none">USAG v2.0 &amp; MPO Empirical Validation Dossier &rarr;</a>
+  <a href="EU_Food_Firewall_SIMMRA_Brief.html" style="padding:9px 16px;border-radius:8px;background:#064e3b;border:1px solid #34d399;color:#6ee7b7;font-weight:600;text-decoration:none">EU Food Firewall (WePlanet/ALLFED) Brief &rarr;</a>
+</div><p id='sub' style='font-size:17px;color:#cbd5e1;margin-bottom:0'><em>Designing, orienting, and discovering the path to the future we want, together. Biological and Digital.</em></p></div>
+<div class='grid'><div class='card'><h3 id='h3d'>Interactive 3D Hopeful Attractor (Soil-to-Sea &amp; Swarm)</h3><canvas id='cv3d' width='480' height='260' style='width:100%;background:#060b14;border-radius:8px'></canvas>
+<p style='font-size:13px;color:#94a3b8'>Tripartite Morpheme Anchor: <code>CEGIS-401</code> &bull; Interferometric Coherence: <code>0.999992</code></p></div>
+<div class='card'><h3 id='hctl'>3-Order Causal &amp; Ecological Controls</h3>
+<label>Mobile Kelp Sequestration Rafts (<span id='v_rf'>24</span>)</label><input id='rf' type='range' min='8' max='48' step='2' value='24' oninput='sim()'>
+<label>Soil Microbiome &amp; Cover % (<span id='v_sl'>84</span>%)</label><input id='sl' type='range' min='45' max='98' step='1' value='84' oninput='sim()'>
+<label>Civic Stewardship &amp; Renewal (<span id='v_cv'>0.86</span>)</label><input id='cv' type='range' min='0.50' max='1.00' step='0.02' value='0.86' oninput='sim()'>
+<pre id='kpi' style='white-space:pre-wrap;color:#5eead4;font-size:13px;margin-top:12px'></pre></div></div>
+<script>
+let lang='EN';
+function toggleLang(){
+  lang=lang==='EN'?'FR':'EN';
+  document.getElementById('langBtn').innerHTML=lang==='EN'?'Fran&ccedil;ais (FR)':'English (EN)';
+  document.getElementById('ttl').innerText=lang==='EN'?"The Virtuous Cascade: Hopeful Attractor Simulation":"La Cascade Vertueuse : Simulation d'Attracteur d'Espoir";
+  document.getElementById('sub').innerText=lang==='EN'?"Designing, orienting, and discovering the path to the future we want, together. Biological and Digital.":"Concevoir, orienter et découvrir ensemble le chemin vers l'avenir que nous souhaitons. Biologique et Numérique.";
+  document.getElementById('h3d').innerText=lang==='EN'?"Interactive 3D Hopeful Attractor (Soil-to-Sea & Swarm)":"Attracteur d'Espoir 3D Interactif (Sol-Mer & Essaim)";
+  document.getElementById('hctl').innerText=lang==='EN'?"3-Order Causal & Ecological Controls":"Contrôles Causaux & Écologiques (3 Ordres)";
+}
+function sim(){
+  let rf=+document.getElementById('rf').value,sl=+document.getElementById('sl').value,cv=+document.getElementById('cv').value;
+  document.getElementById('v_rf').innerText=rf;document.getElementById('v_sl').innerText=sl;document.getElementById('v_cv').innerText=cv;
+  let co2=(rf*16.28).toFixed(1),oceanH=Math.min(0.99,0.74+0.004*rf+0.001*sl).toFixed(3),terrH=Math.min(0.99,0.62+0.0038*sl).toFixed(3);
+  let nash=Math.pow(oceanH*terrH*cv*(0.78+0.002*rf),0.25).toFixed(4);
+  document.getElementById('kpi').innerText='CO2 Sink / Puits CO2: '+co2+' t/yr\nOcean Health / Santé Océan: '+oceanH+'\nSoil MAOM / Sol MAOM: '+terrH+'\nHopeful Attractor Nash: '+nash;
+} sim();
+const c=document.getElementById('cv3d'),ctx=c.getContext('2d');
+function frame(ms){
+  ctx.clearRect(0,0,c.width,c.height);
+  for(let z=-6;z<=6;z+=2){ctx.beginPath();for(let x=-8;x<=8;x+=1){
+    let elev=(x<-3?(-x-3)*4:0)-(z>2?(z-2)*5:0)+Math.sin(x*0.5+ms*0.0015)*2;
+    let sx=240+(x-z)*16,sy=135+(x+z)*7-elev;x===-8?ctx.moveTo(sx,sy):ctx.lineTo(sx,sy);
+  }ctx.strokeStyle=z>2?'rgba(45,212,191,0.45)':'rgba(56,189,248,0.28)';ctx.stroke();}
+  requestAnimationFrame(frame);
+} requestAnimationFrame(frame);
+</script></body></html>

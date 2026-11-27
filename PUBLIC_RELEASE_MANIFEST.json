@@ -1,0 +1,20 @@
+{
+  "ce_id": "CE-284",
+  "status": "PASS",
+  "public_title": "The Virtuous Cascade: Hopeful Attractor Simulation",
+  "bilingual": [
+    "EN",
+    "FR"
+  ],
+  "files": [
+    "index.html",
+    "resume.html",
+    "robots.txt",
+    "ai.txt",
+    "sitemap.xml",
+    "_headers",
+    ".nojekyll",
+    "README.md"
+  ],
+  "leak_free": true
+}

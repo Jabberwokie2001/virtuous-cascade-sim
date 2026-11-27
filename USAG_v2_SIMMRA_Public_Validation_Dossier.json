@@ -1,0 +1,60 @@
+{
+  "dossier_id": "USAG-V2-SIMMRA-PUBLIC-2026",
+  "generated_utc": "2026-11-26T18:00:03Z",
+  "author": "Marc Jonas Wilkins Piva (Ottawa, ON, Canada)",
+  "usag_v2_multitimescale_seal": {
+    "layer_1_to_3_fast_tech_and_live_obs": {
+      "ottawa_02LA004_stage_m": 3.064,
+      "ottawa_effective_mu": 0.361,
+      "toronto_02HC024_level_m": 12.112,
+      "mujoco_13dof_status": "PASS",
+      "scada_enkf_hil_status": "PASS"
+    },
+    "layer_4_to_6_140yr_civil_and_epilo_governance": {
+      "horizon_years": 140,
+      "iso_55001_renewal_rate_pct": 1.65,
+      "gen7_deferred_debt_pct": 0.0,
+      "epilo_sovereignty_index": 0.51
+    },
+    "layer_7_macro_orienting_almanac_pcm_v3": {
+      "total_scenarios_evaluated": 177147,
+      "consistent_attractors_count": 9,
+      "near_consistent_1step_count": 324,
+      "two_layer_separation_enforced": true
+    }
+  },
+  "canada_13_jurisdiction_mpo_45b": {
+    "unspent_headroom": {
+      "mode": "BALANCED_EPILO_UNDEPLOYED_HEADROOM",
+      "arctic_jic_deployed_b_cad": 0.0,
+      "pop_continuity_pct": 98.8,
+      "arctic_sovereignty_pct": 53.4,
+      "mpo_corridors_online": "6/7",
+      "iso55001_asset_health_idx": 88.4,
+      "iso50011_enpi_score": 0.8,
+      "annual_avoided_subsidy_b_cad": 0.75,
+      "sovereign_endowment_30yr_b_cad": 107.0,
+      "territorial_integrity": {
+        "YT": 100.0,
+        "NT": 27.9,
+        "NU": 32.4
+      }
+    },
+    "arctic_jic_deployed": {
+      "mode": "BALANCED_EPILO_PLUS_ARCTIC_JIC",
+      "arctic_jic_deployed_b_cad": 12.9,
+      "pop_continuity_pct": 98.9,
+      "arctic_sovereignty_pct": 100.0,
+      "mpo_corridors_online": "7/7",
+      "iso55001_asset_health_idx": 99.1,
+      "iso50011_enpi_score": 0.96,
+      "annual_avoided_subsidy_b_cad": 1.85,
+      "sovereign_endowment_30yr_b_cad": 191.0,
+      "territorial_integrity": {
+        "YT": 100.0,
+        "NT": 100.0,
+        "NU": 100.0
+      }
+    }
+  }
+}
